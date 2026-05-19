@@ -1,0 +1,1394 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>化妝品安全與香氛應用學會 CSAA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Noto+Serif+TC:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:      #08172c;
+  --navy-mid:  #0e2240;
+  --navy-lt:   #163458;
+  --gold:      #b5903a;
+  --gold-lt:   #ceaa58;
+  --gold-pale: #eddfa0;
+  --white:     #f6f8fc;
+  --g50:       #edf0f7;
+  --g200:      #c4cedd;
+  --g400:      #7888a4;
+  --g600:      #3a4e6e;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans','Noto Serif TC',sans-serif;background:var(--white);color:var(--navy);overflow-x:hidden;line-height:1.7}
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:var(--navy)}
+::-webkit-scrollbar-thumb{background:var(--gold)}
+a{text-decoration:none}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:300;
+  height:68px;display:flex;align-items:center;
+  padding:0 52px;justify-content:space-between;
+  background:rgba(8,23,44,0.97);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(181,144,58,0.16);
+}
+.nav-brand{display:flex;align-items:center;gap:14px}
+.nav-seal{
+  width:38px;height:38px;border-radius:50%;
+  border:1.5px solid var(--gold);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.nav-seal svg{width:20px;height:20px;stroke:var(--gold);fill:none;stroke-width:1.4}
+.nav-zh{font-family:'Noto Serif TC',serif;font-size:12px;color:#fff;letter-spacing:2.5px;font-weight:300;line-height:1.3}
+.nav-en{font-family:'Cormorant Garamond',serif;font-size:10.5px;color:var(--gold);letter-spacing:4px;text-transform:uppercase;font-weight:300}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none}
+.nav-links a{font-size:11.5px;letter-spacing:1.8px;text-transform:uppercase;color:var(--g200);font-weight:300;transition:color .25s;white-space:nowrap}
+.nav-links a:hover{color:var(--gold-lt)}
+.btn-nav{border:1px solid var(--gold);color:var(--gold);background:transparent;padding:8px 20px;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;cursor:pointer;transition:all .3s;white-space:nowrap;display:inline-block}
+.btn-nav:hover{background:var(--gold);color:var(--navy)}
+
+/* HERO */
+.hero{min-height:100vh;background:var(--navy);display:flex;align-items:center;padding-top:68px;position:relative;overflow:hidden}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(181,144,58,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(181,144,58,.045) 1px,transparent 1px);background-size:64px 64px}
+.hero-circle{position:absolute;right:-160px;top:50%;transform:translateY(-50%);width:680px;height:680px;border-radius:50%;border:1px solid rgba(181,144,58,.07);pointer-events:none}
+.hero-circle::after{content:'';position:absolute;inset:60px;border-radius:50%;border:1px solid rgba(181,144,58,.05)}
+.hero-inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:0 52px;display:grid;grid-template-columns:1.1fr 0.9fr;align-items:center;gap:72px;width:100%}
+.hero-eyebrow{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;margin-bottom:22px;display:flex;align-items:center;gap:12px;animation:fadeUp .7s ease both}
+.hero-eyebrow::before{content:'';display:block;width:30px;height:1px;background:var(--gold)}
+.hero-h1{font-family:'Noto Serif TC',serif;font-size:clamp(26px,3.2vw,42px);font-weight:300;line-height:1.45;color:#fff;letter-spacing:3px;margin-bottom:10px;animation:fadeUp .7s .15s ease both}
+.hero-h1 em{font-style:normal;color:var(--gold-lt)}
+.hero-sub{font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:300;color:var(--g400);letter-spacing:4px;text-transform:uppercase;margin-bottom:32px;animation:fadeUp .7s .25s ease both}
+.hero-p{font-size:14px;font-weight:300;color:var(--g200);line-height:1.9;max-width:480px;margin-bottom:44px;animation:fadeUp .7s .35s ease both}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;animation:fadeUp .7s .45s ease both}
+.btn-gold{background:var(--gold);color:var(--navy);border:none;padding:13px 32px;font-size:11.5px;letter-spacing:2.5px;text-transform:uppercase;font-weight:500;cursor:pointer;transition:all .3s;display:inline-block}
+.btn-gold:hover{background:var(--gold-lt)}
+.btn-outline{background:transparent;color:var(--g200);border:1px solid rgba(196,206,221,.28);padding:13px 32px;font-size:11.5px;letter-spacing:2.5px;text-transform:uppercase;font-weight:300;cursor:pointer;transition:all .3s;display:inline-block}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold-lt)}
+
+.hero-card{background:rgba(255,255,255,.03);border:1px solid rgba(181,144,58,.15);padding:44px 36px;position:relative;animation:fadeUp .8s .3s ease both}
+.hero-card::before{content:'';position:absolute;top:0;left:0;width:44px;height:3px;background:var(--gold)}
+.card-label{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:4.5px;color:var(--gold);text-transform:uppercase;margin-bottom:28px}
+.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:36px}
+.stat-n{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:#fff;line-height:1;margin-bottom:5px}
+.stat-n sup{font-size:14px;color:var(--gold)}
+.stat-l{font-size:10.5px;letter-spacing:1.8px;color:var(--g400);text-transform:uppercase}
+.card-hr{height:1px;background:rgba(181,144,58,.1);margin-bottom:28px}
+.cert-list{display:flex;flex-direction:column;gap:11px}
+.cert-item{display:flex;align-items:center;gap:10px;font-size:12.5px;color:var(--g200);font-weight:300}
+.cert-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0}
+
+/* SECTIONS */
+section{padding:96px 0}
+.container{max-width:1200px;margin:0 auto;padding:0 52px}
+.sec-label{font-family:'Cormorant Garamond',serif;font-size:10.5px;letter-spacing:5px;color:var(--gold);text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:12px}
+.sec-label::before{content:'';display:block;width:26px;height:1px;background:var(--gold)}
+.sec-title{font-family:'Noto Serif TC',serif;font-size:clamp(20px,2.6vw,32px);font-weight:300;letter-spacing:3px;line-height:1.5;margin-bottom:14px}
+.sec-desc{font-size:14px;font-weight:300;color:var(--g600);line-height:1.9;max-width:540px}
+
+/* SERVICES */
+.services{background:var(--g50)}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:60px}
+.svc-card{background:#fff;padding:44px 32px;position:relative;overflow:hidden;cursor:pointer;transition:transform .35s,box-shadow .35s}
+.svc-card::after{content:'';position:absolute;bottom:0;left:0;height:3px;width:0;background:var(--gold);transition:width .4s ease}
+.svc-card:hover::after{width:100%}
+.svc-card:hover{transform:translateY(-5px);box-shadow:0 24px 64px rgba(8,23,44,.1)}
+.svc-icon{width:48px;height:48px;border:1px solid rgba(181,144,58,.28);display:flex;align-items:center;justify-content:center;margin-bottom:24px}
+.svc-icon svg{width:22px;height:22px;stroke:var(--gold);fill:none;stroke-width:1.4}
+.svc-tag{font-size:9.5px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;font-weight:500}
+.svc-name{font-family:'Noto Serif TC',serif;font-size:17px;font-weight:400;letter-spacing:2px;color:var(--navy);margin-bottom:14px;line-height:1.5}
+.svc-desc{font-size:13px;font-weight:300;color:var(--g600);line-height:1.85;margin-bottom:24px}
+.svc-list{list-style:none;display:flex;flex-direction:column;gap:8px}
+.svc-list li{font-size:12.5px;color:var(--g600);display:flex;align-items:flex-start;gap:9px;font-weight:300}
+.svc-list li::before{content:'—';color:var(--gold);flex-shrink:0;font-size:9px;margin-top:4px}
+
+/* LAW (dark) */
+.law-section{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.law-section::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(181,144,58,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(181,144,58,.04) 1px,transparent 1px);background-size:52px 52px}
+.law-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.law-left .sec-title{color:#fff}
+.law-left .sec-desc{color:var(--g400);max-width:460px}
+.law-tabs{display:flex;gap:0;margin-top:44px;border-bottom:1px solid rgba(181,144,58,.15)}
+.law-tab{padding:12px 28px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--g400);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .25s;font-weight:300}
+.law-tab.active{color:var(--gold-lt);border-bottom-color:var(--gold)}
+.law-tab:hover:not(.active){color:var(--g200)}
+.law-panel{display:none;padding-top:36px}
+.law-panel.active{display:block}
+.law-steps{display:flex;flex-direction:column;gap:0}
+.law-step{display:flex;gap:20px;padding:24px 0;border-bottom:1px solid rgba(181,144,58,.08)}
+.law-step:last-child{border-bottom:none}
+.step-no{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;color:rgba(181,144,58,.25);line-height:1;flex-shrink:0;width:36px}
+.step-t{font-family:'Noto Serif TC',serif;font-size:14.5px;font-weight:400;color:#fff;letter-spacing:1.5px;margin-bottom:6px}
+.step-d{font-size:12.5px;font-weight:300;color:var(--g400);line-height:1.75}
+
+.compliance-box{background:rgba(255,255,255,.04);border:1px solid rgba(181,144,58,.14);padding:40px 36px;margin-top:44px}
+.compliance-box-title{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:4.5px;text-transform:uppercase;color:var(--gold);margin-bottom:28px}
+.comp-group{margin-bottom:28px}
+.comp-group-title{font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold-lt);margin-bottom:14px;font-weight:400;padding-bottom:8px;border-bottom:1px solid rgba(181,144,58,.12)}
+.comp-items{display:flex;flex-direction:column;gap:9px}
+.comp-item{display:flex;align-items:flex-start;gap:10px;font-size:12.5px;color:var(--g200);font-weight:300}
+.comp-check{width:16px;height:16px;border:1px solid rgba(181,144,58,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.comp-check svg{width:9px;height:9px;stroke:var(--gold);stroke-width:2;fill:none}
+.inquiry-btn{margin-top:32px;width:100%;background:transparent;border:1px solid var(--gold);color:var(--gold);padding:14px;font-size:11px;letter-spacing:3px;text-transform:uppercase;cursor:pointer;transition:all .3s;display:block;text-align:center}
+.inquiry-btn:hover{background:var(--gold);color:var(--navy)}
+
+/* COURSES */
+.courses{background:#fff}
+.courses-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;margin-top:60px}
+.course-card{padding:40px 36px;border:1px solid var(--g50);position:relative;cursor:pointer;transition:border-color .3s,box-shadow .3s;overflow:hidden}
+.course-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold);transform:scaleY(0);transform-origin:top;transition:transform .4s ease}
+.course-card:hover::before{transform:scaleY(1)}
+.course-card:hover{border-color:rgba(181,144,58,.2);box-shadow:0 16px 48px rgba(8,23,44,.07)}
+.course-badge{display:inline-block;font-size:9.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--navy);background:var(--gold-pale);padding:4px 12px;margin-bottom:20px;font-weight:500}
+.course-name{font-family:'Noto Serif TC',serif;font-size:18px;font-weight:400;letter-spacing:2px;margin-bottom:12px;line-height:1.45}
+.course-desc{font-size:13px;font-weight:300;color:var(--g600);line-height:1.85;margin-bottom:24px}
+.course-meta{display:flex;gap:20px;flex-wrap:wrap;padding-top:20px;border-top:1px solid var(--g50)}
+.meta-item{display:flex;align-items:center;gap:7px;font-size:11.5px;color:var(--g400);font-weight:300}
+.meta-item svg{width:14px;height:14px;stroke:var(--gold);fill:none;stroke-width:1.5}
+
+/* ABOUT */
+.about{background:var(--g50)}
+.about-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.about-visual{background:var(--navy-mid);aspect-ratio:4/3;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.about-visual::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(181,144,58,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(181,144,58,.06) 1px,transparent 1px);background-size:40px 40px}
+.about-monogram{position:relative;z-index:2;text-align:center}
+.about-monogram-text{font-family:'Cormorant Garamond',serif;font-size:80px;font-weight:300;color:rgba(181,144,58,.18);line-height:1;letter-spacing:8px}
+.about-monogram-label{font-family:'Noto Serif TC',serif;font-size:13px;font-weight:300;color:rgba(181,144,58,.5);letter-spacing:6px;margin-top:8px}
+.about-values{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:36px}
+.value-item{padding:20px;border:1px solid rgba(181,144,58,.15);background:#fff}
+.value-t{font-family:'Noto Serif TC',serif;font-size:13.5px;font-weight:400;letter-spacing:2px;color:var(--navy);margin-bottom:6px}
+.value-d{font-size:12px;font-weight:300;color:var(--g600);line-height:1.7}
+
+/* CONTACT */
+.contact{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.contact::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 60%, rgba(181,144,58,.06) 0%, transparent 60%)}
+.contact-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.contact-left .sec-title{color:#fff}
+.contact-left .sec-desc{color:var(--g400);max-width:420px;margin-bottom:40px}
+.contact-info{display:flex;flex-direction:column;gap:20px}
+.info-item{display:flex;gap:16px;align-items:flex-start}
+.info-icon{width:36px;height:36px;border:1px solid rgba(181,144,58,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.info-icon svg{width:16px;height:16px;stroke:var(--gold);fill:none;stroke-width:1.4}
+.info-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.info-val{font-size:13.5px;font-weight:300;color:var(--g200)}
+.contact-form{background:rgba(255,255,255,.04);border:1px solid rgba(181,144,58,.13);padding:40px 36px}
+.form-title{font-family:'Noto Serif TC',serif;font-size:16px;font-weight:300;letter-spacing:2px;color:#fff;margin-bottom:28px}
+.form-row{margin-bottom:20px}
+.form-label{font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;display:block}
+.form-input,.form-select,.form-textarea{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(181,144,58,.18);padding:12px 16px;color:#fff;font-size:13px;font-weight:300;font-family:'DM Sans','Noto Serif TC',sans-serif;outline:none;transition:border-color .25s}
+.form-input::placeholder,.form-textarea::placeholder{color:var(--g600)}
+.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--gold)}
+.form-select{appearance:none;cursor:pointer}
+.form-select option{background:var(--navy-mid);color:#fff}
+.form-textarea{resize:vertical;min-height:100px}
+.form-row-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-submit{width:100%;background:var(--gold);color:var(--navy);border:none;padding:14px;font-size:12px;letter-spacing:3px;text-transform:uppercase;font-weight:500;cursor:pointer;margin-top:8px;transition:all .3s;font-family:'DM Sans','Noto Serif TC',sans-serif}
+.form-submit:hover{background:var(--gold-lt)}
+
+/* FOOTER */
+footer{background:#060f1e;color:var(--g400);padding:48px 0 32px}
+.footer-inner{max-width:1200px;margin:0 auto;padding:0 52px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px}
+.footer-brand{display:flex;align-items:center;gap:12px}
+.footer-seal{width:32px;height:32px;border-radius:50%;border:1px solid rgba(181,144,58,.3);display:flex;align-items:center;justify-content:center}
+.footer-seal svg{width:16px;height:16px;stroke:var(--gold);fill:none;stroke-width:1.4;opacity:.6}
+.footer-zh{font-family:'Noto Serif TC',serif;font-size:11px;color:var(--g400);letter-spacing:2px;font-weight:300}
+.footer-copy{font-size:11px;letter-spacing:1px;color:var(--g600)}
+.footer-links{display:flex;gap:24px}
+.footer-links a{font-size:11px;letter-spacing:1.5px;color:var(--g600);transition:color .25s;text-transform:uppercase}
+.footer-links a:hover{color:var(--gold)}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+@media(max-width:900px){
+  nav{padding:0 24px}
+  .nav-links{display:none}
+  .hero-inner,.law-inner,.about-inner,.contact-inner{grid-template-columns:1fr;gap:48px}
+  .hero-card{display:none}
+  .container{padding:0 24px}
+  .svc-grid,.courses-grid{grid-template-columns:1fr}
+  .about-values,.form-row-2{grid-template-columns:1fr}
+  .footer-inner{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-brand" href="#">
+    <div class="nav-seal">
+      <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+    </div>
+    <div>
+      <div class="nav-zh">化妝品安全與香氛應用學會</div>
+      <div class="nav-en">CSAA · Cosmetic Safety &amp; Aromatherapy Association</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">服務項目</a></li>
+    <li><a href="#regulation">法規服務</a></li>
+    <li><a href="#pricing">收費方案</a></li>
+    <li><a href="#courses">認證課程</a></li>
+    <li><a href="#about">關於學會</a></li>
+    <li><a href="https://line.me/R/ti/p/@jostaiwan" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:6px;color:#06C755 !important;border:1px solid rgba(6,199,85,.4);padding:6px 14px;transition:all .3s" onmouseover="this.style.background='rgba(6,199,85,.12)'" onmouseout="this.style.background='transparent'"><svg width="14" height="14" viewBox="0 0 24 24" fill="#06C755"><path d="M12 2C6.48 2 2 6.03 2 11c0 3.27 1.82 6.14 4.58 7.88-.18.64-.66 2.33-.76 2.7-.12.45.17.45.36.33.15-.1 2.33-1.54 3.28-2.17.81.11 1.65.17 2.54.17 5.52 0 10-4.03 10-9S17.52 2 12 2z"/></svg>LINE 諮詢</a></li>
+    <li><a href="#contact" class="btn-nav">立即諮詢</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-circle"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">化妝品安全與香氛應用學會</div>
+      <h1 class="hero-h1">法規合規・安全評估<br><em>讓產品走向國際市場</em></h1>
+      <div class="hero-sub">Cosmetic Safety &amp; Aromatherapy Association</div>
+      <p class="hero-p">專注於 EU PIF 製作、TFDA 法規顧問、IFA 國際芳療認證教育，以及醫學美容創業培訓。為品牌、從業者與創業者提供從法規合規到事業落地的完整支援。</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-gold">申請法規諮詢</a>
+        <a href="#courses" class="btn-outline">查看認證課程</a>
+        <a href="https://line.me/R/ti/p/@jostaiwan" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:#06C755;color:#fff;border:none;padding:13px 28px;font-size:11.5px;letter-spacing:2px;text-transform:uppercase;font-weight:500;cursor:pointer;transition:all .3s;text-decoration:none" onmouseover="this.style.background='#05b34d'" onmouseout="this.style.background='#06C755'"><svg width="15" height="15" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.03 2 11c0 3.27 1.82 6.14 4.58 7.88-.18.64-.66 2.33-.76 2.7-.12.45.17.45.36.33.15-.1 2.33-1.54 3.28-2.17.81.11 1.65.17 2.54.17 5.52 0 10-4.03 10-9S17.52 2 12 2z"/></svg>LINE 即時諮詢</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="card-label">學會服務總覽</div>
+      <div class="stats-grid">
+        <div><div class="stat-n">PIF</div><div class="stat-l">EU 文件製作</div></div>
+        <div><div class="stat-n">TFDA</div><div class="stat-l">法規顧問服務</div></div>
+        <div><div class="stat-n">IFA</div><div class="stat-l">芳療認證教育</div></div>
+        <div><div class="stat-n">醫美</div><div class="stat-l">創業培訓計畫</div></div>
+      </div>
+      <div class="card-hr"></div>
+      <div class="cert-list">
+        <div class="cert-item"><div class="cert-dot"></div>EU Regulation (EC) No 1223/2009 合規</div>
+        <div class="cert-item"><div class="cert-dot"></div>台灣化粧品衛生安全管理法合規</div>
+        <div class="cert-item"><div class="cert-dot"></div>SCCS / OECD 毒理學標準</div>
+        <div class="cert-item"><div class="cert-dot"></div>ISO 22716 GMP 製造規範</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="sec-label">核心服務</div>
+    <h2 class="sec-title">我們提供什麼</h2>
+    <p class="sec-desc">從 EU PIF 文件製作、TFDA 法規顧問、IFA 國際芳療教育，到醫學美容創業培訓，學會提供化妝品與美容產業完整的專業解決方案。</p>
+    <div class="svc-grid" style="grid-template-columns:repeat(2,1fr)">
+
+      <!-- 1. PIF 製作 -->
+      <div class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="12" y1="9" x2="12" y2="9"/></svg></div>
+        <div class="svc-tag">EU Regulation · PIF</div>
+        <div class="svc-name">PIF 製作<br>產品資訊文件建立</div>
+        <p class="svc-desc">依據 EU Regulation (EC) No 1223/2009，為每項化妝品產品建立完整 Product Information File 及 CPSR 毒理安全評估報告，協助品牌合法進入歐盟市場，符合主管機關隨時查核標準。</p>
+        <ul class="svc-list">
+          <li>PIF 文件結構建立與管理</li>
+          <li>CPSR Part A／B 安全評估撰寫</li>
+          <li>MoS 安全邊際 / NOAEL / SED 計算</li>
+          <li>成分 Annex 合規性審查</li>
+          <li>EU Responsible Person 指定協助</li>
+          <li>CPNP 歐盟通報平台申報</li>
+        </ul>
+      </div>
+
+      <!-- 2. TFDA 法規顧問 -->
+      <div class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9,12 11,14 15,10"/></svg></div>
+        <div class="svc-tag">台灣 TFDA · 法規</div>
+        <div class="svc-name">TFDA 法規顧問<br>台灣市場合規服務</div>
+        <p class="svc-desc">依據《化粧品衛生安全管理法》及衛福部相關子法，提供品牌長期法規顧問服務，從配方審查、產品登錄、標籤設計到含藥化妝品查驗，全程陪跑。</p>
+        <ul class="svc-list">
+          <li>化粧品產品登錄（CPR）申報</li>
+          <li>成分合規性與濃度限制審查</li>
+          <li>中文標示法規檢核（INCI / 警語）</li>
+          <li>含藥化妝品查驗登記輔導</li>
+          <li>GMP 工廠合規評估與改善建議</li>
+          <li>法規動態監測與即時通報</li>
+        </ul>
+      </div>
+
+      <!-- 3. IFA 芳療教育 -->
+      <div class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+        <div class="svc-tag">IFA · 芳療認證</div>
+        <div class="svc-name">IFA 芳療教育<br>國際認證培訓課程</div>
+        <p class="svc-desc">提供符合國際芳療師聯盟（IFA）標準的完整認證課程，從精油化學、安全毒理到調香實作與臨床應用，培訓具備國際執業資格的專業芳療師，兼顧理論深度與實務能力。</p>
+        <ul class="svc-list">
+          <li>IFA 國際芳療師 Diploma 認證課程</li>
+          <li>精油化學與安全毒理學</li>
+          <li>天然香水與調香技術工作坊</li>
+          <li>芳療臨床應用與個案實習</li>
+          <li>IFA 考試準備與執業資格輔導</li>
+          <li>線上 + 實體混合制彈性學習</li>
+        </ul>
+      </div>
+
+      <!-- 4. 醫學美容創業培訓 -->
+      <div class="svc-card">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 10h2l2 4 2-8 2 4h2"/></svg></div>
+        <div class="svc-tag">Medical Aesthetics · 創業</div>
+        <div class="svc-name">醫學美容創業培訓<br>從零到開業的完整路徑</div>
+        <p class="svc-desc">專為有意進入醫學美容領域的創業者設計，涵蓋診所 / 工作室選品邏輯、法規框架、產品知識、定價策略與品牌定位，協助學員建立具競爭力的醫美事業基礎，少走彎路、精準落地。</p>
+        <ul class="svc-list">
+          <li>醫美市場分析與選品策略</li>
+          <li>儀器 / 保養品 / 療程規劃</li>
+          <li>TFDA 醫療器材與化妝品法規</li>
+          <li>定價模型與客單價提升設計</li>
+          <li>品牌定位與社群行銷規劃</li>
+          <li>開業 SOP 與團隊建置輔導</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- REGULATION -->
+<section class="law-section" id="regulation">
+  <div class="container">
+    <div class="law-inner">
+      <div class="law-left">
+        <div class="sec-label">法規服務流程</div>
+        <h2 class="sec-title">從配方到上市<br>完整合規路徑</h2>
+        <p class="sec-desc">無論是進入歐盟或台灣市場，我們提供系統性的法規諮詢與文件服務，讓品牌無需自行摸索複雜法規體系。</p>
+        <div class="law-tabs">
+          <div class="law-tab active" onclick="switchTab('eu')">EU PIF 服務</div>
+          <div class="law-tab" onclick="switchTab('tfda')">TFDA 申報</div>
+        </div>
+        <div class="law-panel active" id="panel-eu">
+          <div class="law-steps">
+            <div class="law-step"><div class="step-no">01</div><div><div class="step-t">初步配方審查</div><div class="step-d">審查配方成分是否符合 EU Annexes 限制物質、准用防腐劑、色素及 UV 過濾劑清單，排除不合規成分。</div></div></div>
+            <div class="law-step"><div class="step-no">02</div><div><div class="step-t">毒理安全評估（CPSR Part A）</div><div class="step-d">依 SCCS Notes of Guidance，針對各成分計算 SED、NOAEL，進行 MoS 安全邊際分析，評估暴露情境。</div></div></div>
+            <div class="law-step"><div class="step-no">03</div><div><div class="step-t">安全評估結論（CPSR Part B）</div><div class="step-d">由合格毒理師出具評估結論並簽署聲明，確認產品在正常使用條件下對人體安全無虞。</div></div></div>
+            <div class="law-step"><div class="step-no">04</div><div><div class="step-t">PIF 建立與 CPNP 申報</div><div class="step-d">彙整完整 PIF 文件包，透過歐盟 Cosmetic Products Notification Portal 完成產品通報，取得合規授權。</div></div></div>
+          </div>
+        </div>
+        <div class="law-panel" id="panel-tfda">
+          <div class="law-steps">
+            <div class="law-step"><div class="step-no">01</div><div><div class="step-t">成分合規性初審</div><div class="step-d">對照衛福部公告之化粧品成分使用規定，審查配方成分濃度、限制條件及禁用物質清單。</div></div></div>
+            <div class="law-step"><div class="step-no">02</div><div><div class="step-t">產品登錄資料準備</div><div class="step-d">依 CPR 系統要求，備齊產品基本資料、全成分、製造廠資訊、標籤設計及安全性資料。</div></div></div>
+            <div class="law-step"><div class="step-no">03</div><div><div class="step-t">標籤合規審查</div><div class="step-d">檢核中文標示內容，包含製造日期、保存期限、全成分 INCI 名稱、警語及淨重是否符合法規。</div></div></div>
+            <div class="law-step"><div class="step-no">04</div><div><div class="step-t">含藥查驗登記（如適用）</div><div class="step-d">針對含藥化妝品（美白、防曬等），協助準備查驗登記申請文件，向 TFDA 提交完整案件。</div></div></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="compliance-box">
+          <div class="compliance-box-title">合規文件清單</div>
+          <div class="comp-group">
+            <div class="comp-group-title">EU PIF 必備文件</div>
+            <div class="comp-items">
+              <div class="comp-item"><div class="comp-check"><svg viewBox="0 0 10 10"><polyline points="1,5 4,8 9,2"/></svg></div>產品描述及用途說明</div>
+              <div class="comp-item"><div class="comp-check"><svg viewBox="0 0 10 10"><polyline points="1,5 4,8 9,2"/></svg></div>CPSR 化妝品安全報告（Part A + B）</div>
+              <div class="comp-item"><div class="comp-check"><svg viewBox="0 0 10 10"><polyline points="1,5 4,8 9,2"/></svg></div>GMP 製造方法說明（ISO 22716）</div>
+              <div class="comp-item"><div class="comp-check"><svg viewBox="0 0 10 10"><polyline points="1,5 4,8 9,2"/></svg></div>功效聲稱科學依據</div>
+              <div class="comp-item"><div class="comp-check"><svg viewBox="0 0 10 10"><polyline points="1,5 4,8 9,2"/></svg></div>動物實驗合規聲明</div>
+            </div>
+          </div>
+          <div class="comp-group">
+            <div class="comp-group-title">TFDA 申報文件</div>
+            <div class="comp-items">
+              <div class="comp-item"><div class="comp-check"><svg viewBox="0 0 10 10"><polyline points="1,5 4,8 9,2"/></svg></div>全成分清單（INCI 名稱）</div>
+              <div class="comp-item"><div class="comp-check"><svg viewBox="0 0 10 10"><polyline points="1,5 4,8 9,2"/></svg></div>製造廠資料及 GMP 證明</div>
+              <div class="comp-item"><div class="comp-check"><svg viewBox="0 0 10 10"><polyline points="1,5 4,8 9,2"/></svg></div>產品標籤設計稿</div>
+              <div class="comp-item"><div class="comp-check"><svg viewBox="0 0 10 10"><polyline points="1,5 4,8 9,2"/></svg></div>安全性評估資料</div>
+              <div class="comp-item"><div class="comp-check"><svg viewBox="0 0 10 10"><polyline points="1,5 4,8 9,2"/></svg></div>進口許可文件（如適用）</div>
+            </div>
+          </div>
+        </div>
+        <a href="#contact" class="inquiry-btn">申請法規服務諮詢 →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COURSES -->
+<section class="courses" id="courses">
+  <div class="container">
+    <div class="sec-label">認證課程</div>
+    <h2 class="sec-title">專業培訓與認證</h2>
+    <p class="sec-desc">結合國際芳療標準與化妝品法規知識，提供系統化的專業培訓，取得業界認可的認證資格。</p>
+    <div class="courses-grid">
+      <div class="course-card">
+        <span class="course-badge">IFA 國際認證</span>
+        <div class="course-name">國際芳療師認證課程<br>IFA Aromatherapy Diploma</div>
+        <p class="course-desc">符合國際芳療師聯盟（IFA）標準的完整培訓，涵蓋植物精油化學、調配技術、芳療應用與安全實務，取得國際認可執業資格。</p>
+        <div class="course-meta">
+          <div class="meta-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>200 小時</div>
+          <div class="meta-item"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>線上 + 實體</div>
+          <div class="meta-item"><svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>IFA 國際認證</div>
+        </div>
+      </div>
+      <div class="course-card">
+        <span class="course-badge">專業進階</span>
+        <div class="course-name">化妝品法規實務課程<br>Cosmetic Regulatory Affairs</div>
+        <p class="course-desc">針對品牌主、研發人員及法規從業者設計，深入解析 EU PIF、TFDA 申報流程、成分毒理評估與合規實務操作，含案例演練。</p>
+        <div class="course-meta">
+          <div class="meta-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>32 小時</div>
+          <div class="meta-item"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>小班制</div>
+          <div class="meta-item"><svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>學會結業認證</div>
+        </div>
+      </div>
+      <div class="course-card">
+        <span class="course-badge">精油調香</span>
+        <div class="course-name">天然香水調香師培訓<br>Natural Perfumery Certificate</div>
+        <p class="course-desc">從 Grasse 調香傳統出發，學習精油、原精、植物萃取物的香調結構，掌握天然配方設計，理解 IFRA 合規標準與實際應用。</p>
+        <div class="course-meta">
+          <div class="meta-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>48 小時</div>
+          <div class="meta-item"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>實體工作坊</div>
+          <div class="meta-item"><svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>學會結業認證</div>
+        </div>
+      </div>
+      <div class="course-card">
+        <span class="course-badge">企業培訓</span>
+        <div class="course-name">企業客製化培訓方案<br>Corporate Training Program</div>
+        <p class="course-desc">針對化妝品品牌、OEM/ODM 廠商、醫美診所提供客製化內訓，主題涵蓋成分知識、法規更新、安全評估與行銷合規聲稱。</p>
+        <div class="course-meta">
+          <div class="meta-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>彈性規劃</div>
+          <div class="meta-item"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>駐廠 / 遠端</div>
+          <div class="meta-item"><svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>報價洽談</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-inner">
+      <div class="about-visual">
+        <div class="about-monogram">
+          <div class="about-monogram-text">CSAA</div>
+          <div class="about-monogram-label">化妝品安全與香氛應用學會</div>
+        </div>
+      </div>
+      <div>
+        <div class="sec-label">關於學會</div>
+        <h2 class="sec-title">科學為本<br>安全為先</h2>
+        <p class="sec-desc">化妝品安全與香氛應用學會（CSAA）由化妝品法規、毒理學及芳療領域的專業人士共同創立，致力於推動台灣化妝品產業的法規素養與專業水準。我們相信，真正的品牌競爭力來自科學根基與法規合規的雙重保障。</p>
+        <div class="about-values">
+          <div class="value-item"><div class="value-t">科學嚴謹</div><div class="value-d">毒理評估遵循 SCCS、OECD 國際標準，數據可信、結論負責。</div></div>
+          <div class="value-item"><div class="value-t">法規精準</div><div class="value-d">持續追蹤 EU、TFDA 法規動態，確保服務與時俱進。</div></div>
+          <div class="value-item"><div class="value-t">教育傳承</div><div class="value-d">培育具備法規意識的芳療專業人才，提升產業整體素質。</div></div>
+          <div class="value-item"><div class="value-t">品牌賦能</div><div class="value-d">協助台灣品牌以合規之姿進入國際市場，建立長期競爭優勢。</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section style="background:var(--navy);padding:96px 0;position:relative;overflow:hidden" id="pricing">
+  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(181,144,58,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(181,144,58,.04) 1px,transparent 1px);background-size:52px 52px"></div>
+  <div class="container" style="position:relative;z-index:2">
+    <div class="sec-label">PIF 收費方案</div>
+    <h2 class="sec-title" style="color:#fff">客戶自備資料<br><em style="font-style:normal;color:var(--gold-lt)">即可抵免對應費用</em></h2>
+    <p class="sec-desc" style="color:var(--g400);margin-bottom:16px">PIF 建置分三階段進行。每個階段部分項目若客戶能自行提供且符合標準，該項費用即可免除。使用下方試算器，勾選您已備妥的資料，即時計算實際費用。</p>
+    <p style="font-size:12px;color:var(--g600);margin-bottom:56px;letter-spacing:1px">第一階段不限審核次數至文件符合 PIF 建置標準</p>
+
+    <!-- STAGE TABS -->
+    <div style="display:flex;gap:0;border-bottom:1px solid rgba(181,144,58,.15);margin-bottom:48px">
+      <div onclick="showStage(1)" id="stab-1" style="padding:12px 32px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-lt);border-bottom:2px solid var(--gold);margin-bottom:-1px;cursor:pointer;transition:all .25s">第一階段</div>
+      <div onclick="showStage(2)" id="stab-2" style="padding:12px 32px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--g400);border-bottom:2px solid transparent;margin-bottom:-1px;cursor:pointer;transition:all .25s">第二階段</div>
+      <div onclick="showStage(3)" id="stab-3" style="padding:12px 32px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--g400);border-bottom:2px solid transparent;margin-bottom:-1px;cursor:pointer;transition:all .25s">第三階段</div>
+      <div onclick="showStage(4)" id="stab-4" style="padding:12px 32px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--g400);border-bottom:2px solid transparent;margin-bottom:-1px;cursor:pointer;transition:all .25s">追加測試</div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 360px;gap:48px;align-items:start">
+
+      <!-- LEFT: item checklist -->
+      <div>
+
+        <!-- STAGE 1 -->
+        <div id="stage-1">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+            <div style="font-family:'Noto Serif TC',serif;font-size:19px;font-weight:300;color:#fff;letter-spacing:2px">第一階段</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--gold-lt)">NT$12,000</div>
+          </div>
+          <p style="font-size:12.5px;color:var(--g400);margin-bottom:28px;line-height:1.7">基礎資料審查。以下項目若客戶已自備並符合標準，可免除對應費用。</p>
+          <div style="display:flex;flex-direction:column;gap:2px">
+            <div class="pif-item" data-stage="1" data-fee="0" data-required="true">
+              <div class="pif-row" style="display:flex;align-items:center;gap:14px;padding:16px 20px;background:rgba(255,255,255,.03);border:1px solid rgba(181,144,58,.1);transition:all .3s">
+                <div style="flex:1">
+                  <div style="font-size:13.5px;color:#fff;font-weight:300;margin-bottom:3px">全成分清單</div>
+                  <div style="font-size:11.5px;color:var(--g400)">各別含量・INCI 命名規範</div>
+                </div>
+                <div style="font-size:12px;color:var(--g400);white-space:nowrap;min-width:80px;text-align:right">包含於階段費用</div>
+                <div style="font-size:10px;letter-spacing:1.5px;color:var(--gold);background:rgba(181,144,58,.1);padding:3px 10px;white-space:nowrap">必要項目</div>
+              </div>
+            </div>
+            <div class="pif-item" data-stage="1" data-fee="0" data-required="true">
+              <div class="pif-row" style="display:flex;align-items:center;gap:14px;padding:16px 20px;background:rgba(255,255,255,.03);border:1px solid rgba(181,144,58,.1)">
+                <div style="flex:1">
+                  <div style="font-size:13.5px;color:#fff;font-weight:300;margin-bottom:3px">產品外包裝 / 容器 / 標籤或仿單</div>
+                  <div style="font-size:11.5px;color:var(--g400)">實體或高解析度設計稿</div>
+                </div>
+                <div style="font-size:12px;color:var(--g400);white-space:nowrap;min-width:80px;text-align:right">包含於階段費用</div>
+                <div style="font-size:10px;letter-spacing:1.5px;color:var(--gold);background:rgba(181,144,58,.1);padding:3px 10px;white-space:nowrap">必要項目</div>
+              </div>
+            </div>
+            <div class="pif-item" data-stage="1" data-fee="0" data-required="true">
+              <div class="pif-row" style="display:flex;align-items:center;gap:14px;padding:16px 20px;background:rgba(255,255,255,.03);border:1px solid rgba(181,144,58,.1)">
+                <div style="flex:1">
+                  <div style="font-size:13.5px;color:#fff;font-weight:300;margin-bottom:3px">後續階段檢驗建議</div>
+                  <div style="font-size:11.5px;color:var(--g400)">不限審核次數至符合 PIF 標準</div>
+                </div>
+                <div style="font-size:12px;color:var(--g400);white-space:nowrap;min-width:80px;text-align:right">包含於階段費用</div>
+                <div style="font-size:10px;letter-spacing:1.5px;color:var(--gold);background:rgba(181,144,58,.1);padding:3px 10px;white-space:nowrap">必要項目</div>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:24px;padding:16px 20px;border:1px solid rgba(181,144,58,.2);background:rgba(181,144,58,.05);display:flex;justify-content:space-between;align-items:center">
+            <div style="font-size:12px;color:var(--g400)">第一階段小計</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;color:#fff">NT$12,000</div>
+          </div>
+        </div>
+
+        <!-- STAGE 2 -->
+        <div id="stage-2" style="display:none">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+            <div style="font-family:'Noto Serif TC',serif;font-size:19px;font-weight:300;color:#fff;letter-spacing:2px">第二階段</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--gold-lt)">NT$90,000 <span style="font-size:14px;color:var(--g400)">（含全項）</span></div>
+          </div>
+          <p style="font-size:12.5px;color:var(--g400);margin-bottom:28px;line-height:1.7">檢驗報告取得。勾選您已自備並符合標準的報告，即可免除該項費用。</p>
+          <div style="display:flex;flex-direction:column;gap:2px">
+
+            <div class="pif-item can-waive" data-stage="2" data-fee="44000" data-key="s2_stability">
+              <div class="pif-row" style="display:flex;align-items:center;gap:14px;padding:16px 20px;background:rgba(255,255,255,.03);border:1px solid rgba(181,144,58,.1);transition:all .3s;cursor:pointer" onclick="toggleWaive(this)">
+                <div class="waive-box" style="width:20px;height:20px;border:1.5px solid rgba(181,144,58,.4);border-radius:2px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .3s">
+                  <svg width="10" height="10" viewBox="0 0 10 10" style="display:none"><polyline points="1,5 4,8 9,2" stroke="white" stroke-width="2" fill="none"/></svg>
+                </div>
+                <div style="flex:1">
+                  <div style="font-size:13.5px;color:#fff;font-weight:300;margin-bottom:3px">產品安定性試驗報告</div>
+                  <div style="font-size:11.5px;color:var(--g400)">自備符合標準之報告可免收</div>
+                </div>
+                <div class="fee-display" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:var(--gold-lt);white-space:nowrap">NT$44,000</div>
+              </div>
+            </div>
+
+            <div class="pif-item can-waive" data-stage="2" data-fee="7600" data-key="s2_micro">
+              <div class="pif-row" style="display:flex;align-items:center;gap:14px;padding:16px 20px;background:rgba(255,255,255,.03);border:1px solid rgba(181,144,58,.1);transition:all .3s;cursor:pointer" onclick="toggleWaive(this)">
+                <div class="waive-box" style="width:20px;height:20px;border:1.5px solid rgba(181,144,58,.4);border-radius:2px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .3s">
+                  <svg width="10" height="10" viewBox="0 0 10 10" style="display:none"><polyline points="1,5 4,8 9,2" stroke="white" stroke-width="2" fill="none"/></svg>
+                </div>
+                <div style="flex:1">
+                  <div style="font-size:13.5px;color:#fff;font-weight:300;margin-bottom:3px">微生物檢測報告</div>
+                  <div style="font-size:11.5px;color:var(--g400)">自備符合標準之報告可免收</div>
+                </div>
+                <div class="fee-display" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:var(--gold-lt);white-space:nowrap">NT$7,600</div>
+              </div>
+            </div>
+
+            <div class="pif-item can-waive" data-stage="2" data-fee="25000" data-key="s2_preserv">
+              <div class="pif-row" style="display:flex;align-items:center;gap:14px;padding:16px 20px;background:rgba(255,255,255,.03);border:1px solid rgba(181,144,58,.1);transition:all .3s;cursor:pointer" onclick="toggleWaive(this)">
+                <div class="waive-box" style="width:20px;height:20px;border:1.5px solid rgba(181,144,58,.4);border-radius:2px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .3s">
+                  <svg width="10" height="10" viewBox="0 0 10 10" style="display:none"><polyline points="1,5 4,8 9,2" stroke="white" stroke-width="2" fill="none"/></svg>
+                </div>
+                <div style="flex:1">
+                  <div style="font-size:13.5px;color:#fff;font-weight:300;margin-bottom:3px">防腐效能試驗報告</div>
+                  <div style="font-size:11.5px;color:var(--g400)">自備符合標準之報告可免收</div>
+                </div>
+                <div class="fee-display" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:var(--gold-lt);white-space:nowrap">NT$25,000</div>
+              </div>
+            </div>
+
+            <div class="pif-item can-waive" data-stage="2" data-fee="0" data-key="s2_safety">
+              <div class="pif-row" style="display:flex;align-items:center;gap:14px;padding:16px 20px;background:rgba(255,255,255,.03);border:1px solid rgba(181,144,58,.1);transition:all .3s;cursor:pointer" onclick="toggleWaive(this)">
+                <div class="waive-box" style="width:20px;height:20px;border:1.5px solid rgba(181,144,58,.4);border-radius:2px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .3s">
+                  <svg width="10" height="10" viewBox="0 0 10 10" style="display:none"><polyline points="1,5 4,8 9,2" stroke="white" stroke-width="2" fill="none"/></svg>
+                </div>
+                <div style="flex:1">
+                  <div style="font-size:13.5px;color:#fff;font-weight:300;margin-bottom:3px">功能及安全評估佐證資料</div>
+                  <div style="font-size:11.5px;color:var(--g400)">依需求而定・自備可免收</div>
+                </div>
+                <div class="fee-display" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:var(--gold-lt);white-space:nowrap">依需求</div>
+              </div>
+            </div>
+
+            <div class="pif-item can-waive" data-stage="2" data-fee="0" data-key="s2_pkg">
+              <div class="pif-row" style="display:flex;align-items:center;gap:14px;padding:16px 20px;background:rgba(255,255,255,.03);border:1px solid rgba(181,144,58,.1);transition:all .3s;cursor:pointer" onclick="toggleWaive(this)">
+                <div class="waive-box" style="width:20px;height:20px;border:1.5px solid rgba(181,144,58,.4);border-radius:2px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .3s">
+                  <svg width="10" height="10" viewBox="0 0 10 10" style="display:none"><polyline points="1,5 4,8 9,2" stroke="white" stroke-width="2" fill="none"/></svg>
+                </div>
+                <div style="flex:1">
+                  <div style="font-size:13.5px;color:#fff;font-weight:300;margin-bottom:3px">與產品接觸之包裝材質資料</div>
+                  <div style="font-size:11.5px;color:var(--g400)">依需求而定・自備可免收</div>
+                </div>
+                <div class="fee-display" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:var(--gold-lt);white-space:nowrap">依需求</div>
+              </div>
+            </div>
+
+            <div class="pif-item" data-stage="2" data-fee="15000" data-required="true">
+              <div class="pif-row" style="display:flex;align-items:center;gap:14px;padding:16px 20px;background:rgba(255,255,255,.03);border:1px solid rgba(181,144,58,.1)">
+                <div style="flex:1">
+                  <div style="font-size:13.5px;color:#fff;font-weight:300;margin-bottom:3px">檢驗報告資料審核</div>
+                  <div style="font-size:11.5px;color:var(--g400)">所有報告之合規審查・必要項目</div>
+                </div>
+                <div style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:var(--gold-lt);white-space:nowrap">NT$15,000</div>
+                <div style="font-size:10px;letter-spacing:1.5px;color:var(--gold);background:rgba(181,144,58,.1);padding:3px 10px;white-space:nowrap">必要項目</div>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:24px;padding:16px 20px;border:1px solid rgba(181,144,58,.2);background:rgba(181,144,58,.05);display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <div style="font-size:12px;color:var(--g400);margin-bottom:4px">第二階段小計（依勾選）</div>
+              <div style="font-size:11px;color:var(--g600)">已勾選自備項目將自動抵免</div>
+            </div>
+            <div style="text-align:right">
+              <div id="s2-waived" style="font-size:11px;color:#5aaa7a;margin-bottom:4px;display:none"></div>
+              <div style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;color:#fff" id="s2-total">NT$90,000</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STAGE 3 -->
+        <div id="stage-3" style="display:none">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+            <div style="font-family:'Noto Serif TC',serif;font-size:19px;font-weight:300;color:#fff;letter-spacing:2px">第三階段</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--gold-lt)">NT$80,000 <span style="font-size:14px;color:var(--g400)">（含全項）</span></div>
+          </div>
+          <p style="font-size:12.5px;color:var(--g400);margin-bottom:28px;line-height:1.7">毒理評估與安全簽署。此階段為核心專業服務，含成分毒理資料查找與安全資料簽署。</p>
+          <div style="display:flex;flex-direction:column;gap:2px">
+
+            <div class="pif-item can-waive" data-stage="3" data-fee="50000" data-key="s3_tox">
+              <div class="pif-row" style="display:flex;align-items:center;gap:14px;padding:16px 20px;background:rgba(255,255,255,.03);border:1px solid rgba(181,144,58,.1);transition:all .3s;cursor:pointer" onclick="toggleWaive(this)">
+                <div class="waive-box" style="width:20px;height:20px;border:1.5px solid rgba(181,144,58,.4);border-radius:2px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .3s">
+                  <svg width="10" height="10" viewBox="0 0 10 10" style="display:none"><polyline points="1,5 4,8 9,2" stroke="white" stroke-width="2" fill="none"/></svg>
+                </div>
+                <div style="flex:1">
+                  <div style="font-size:13.5px;color:#fff;font-weight:300;margin-bottom:3px">成分之毒理資料查找</div>
+                  <div style="font-size:11.5px;color:var(--g400)">自備完整毒理資料且符合標準可免收</div>
+                </div>
+                <div class="fee-display" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:var(--gold-lt);white-space:nowrap">NT$50,000</div>
+              </div>
+            </div>
+
+            <div class="pif-item" data-stage="3" data-fee="30000" data-required="true">
+              <div class="pif-row" style="display:flex;align-items:center;gap:14px;padding:16px 20px;background:rgba(255,255,255,.03);border:1px solid rgba(181,144,58,.1)">
+                <div style="flex:1">
+                  <div style="font-size:13.5px;color:#fff;font-weight:300;margin-bottom:3px">安全資料簽署人員評估並簽署</div>
+                  <div style="font-size:11.5px;color:var(--g400)">CPSR Part B・合格毒理師簽署・必要項目</div>
+                </div>
+                <div style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:var(--gold-lt);white-space:nowrap">NT$30,000</div>
+                <div style="font-size:10px;letter-spacing:1.5px;color:var(--gold);background:rgba(181,144,58,.1);padding:3px 10px;white-space:nowrap">必要項目</div>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:24px;padding:16px 20px;border:1px solid rgba(181,144,58,.2);background:rgba(181,144,58,.05);display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <div style="font-size:12px;color:var(--g400);margin-bottom:4px">第三階段小計（依勾選）</div>
+              <div style="font-size:11px;color:var(--g600)">毒理資料自備可節省 NT$50,000</div>
+            </div>
+            <div style="text-align:right">
+              <div id="s3-waived" style="font-size:11px;color:#5aaa7a;margin-bottom:4px;display:none"></div>
+              <div style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;color:#fff" id="s3-total">NT$80,000</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STAGE 4: add-on tests -->
+        <div id="stage-4" style="display:none">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+            <div style="font-family:'Noto Serif TC',serif;font-size:19px;font-weight:300;color:#fff;letter-spacing:2px">追加測試項目</div>
+            <div style="font-size:13px;color:var(--g400)">依產品成分決定是否需要</div>
+          </div>
+          <p style="font-size:12.5px;color:var(--g400);margin-bottom:28px;line-height:1.7">SA 評估後視產品成分，可能需要以下追加測試。勾選預計需要的項目可納入總費用試算。</p>
+          <div style="display:flex;flex-direction:column;gap:2px">
+
+            <div class="pif-item can-add" data-stage="4" data-fee="2550" data-key="a_metal">
+              <div class="pif-row" style="display:flex;align-items:center;gap:14px;padding:16px 20px;background:rgba(255,255,255,.03);border:1px solid rgba(181,144,58,.1);transition:all .3s;cursor:pointer" onclick="toggleAdd(this)">
+                <div class="add-box" style="width:20px;height:20px;border:1.5px solid rgba(181,144,58,.4);border-radius:2px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .3s">
+                  <svg width="10" height="10" viewBox="0 0 10 10" style="display:none"><polyline points="1,5 4,8 9,2" stroke="white" stroke-width="2" fill="none"/></svg>
+                </div>
+                <div style="flex:1">
+                  <div style="font-size:13.5px;color:#fff;font-weight:300;margin-bottom:3px">重金屬檢測（砷・鉛・鎘・汞）</div>
+                  <div style="font-size:11.5px;color:var(--g400)">ICP-OES 分析法</div>
+                </div>
+                <div class="fee-display" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:var(--gold-lt);white-space:nowrap">NT$2,550</div>
+              </div>
+            </div>
+
+            <div class="pif-item can-add" data-stage="4" data-fee="8800" data-key="a_dioxane">
+              <div class="pif-row" style="display:flex;align-items:center;gap:14px;padding:16px 20px;background:rgba(255,255,255,.03);border:1px solid rgba(181,144,58,.1);transition:all .3s;cursor:pointer" onclick="toggleAdd(this)">
+                <div class="add-box" style="width:20px;height:20px;border:1.5px solid rgba(181,144,58,.4);border-radius:2px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .3s">
+                  <svg width="10" height="10" viewBox="0 0 10 10" style="display:none"><polyline points="1,5 4,8 9,2" stroke="white" stroke-width="2" fill="none"/></svg>
+                </div>
+                <div style="flex:1">
+                  <div style="font-size:13.5px;color:#fff;font-weight:300;margin-bottom:3px">1,4-Dioxane 檢測</div>
+                  <div style="font-size:11.5px;color:var(--g400)">乙氧基化物相關成分之潛在雜質</div>
+                </div>
+                <div class="fee-display" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:var(--gold-lt);white-space:nowrap">NT$8,800</div>
+              </div>
+            </div>
+
+            <div class="pif-item can-add" data-stage="4" data-fee="2800" data-key="a_form">
+              <div class="pif-row" style="display:flex;align-items:center;gap:14px;padding:16px 20px;background:rgba(255,255,255,.03);border:1px solid rgba(181,144,58,.1);transition:all .3s;cursor:pointer" onclick="toggleAdd(this)">
+                <div class="add-box" style="width:20px;height:20px;border:1.5px solid rgba(181,144,58,.4);border-radius:2px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .3s">
+                  <svg width="10" height="10" viewBox="0 0 10 10" style="display:none"><polyline points="1,5 4,8 9,2" stroke="white" stroke-width="2" fill="none"/></svg>
+                </div>
+                <div style="flex:1">
+                  <div style="font-size:13.5px;color:#fff;font-weight:300;margin-bottom:3px">甲醛 / 甲醛釋放劑檢測</div>
+                  <div style="font-size:11.5px;color:var(--g400)">防腐劑成分相關</div>
+                </div>
+                <div class="fee-display" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:var(--gold-lt);white-space:nowrap">NT$2,800</div>
+              </div>
+            </div>
+
+            <div class="pif-item can-add" data-stage="4" data-fee="25000" data-key="a_allerg">
+              <div class="pif-row" style="display:flex;align-items:center;gap:14px;padding:16px 20px;background:rgba(255,255,255,.03);border:1px solid rgba(181,144,58,.1);transition:all .3s;cursor:pointer" onclick="toggleAdd(this)">
+                <div class="add-box" style="width:20px;height:20px;border:1.5px solid rgba(181,144,58,.4);border-radius:2px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .3s">
+                  <svg width="10" height="10" viewBox="0 0 10 10" style="display:none"><polyline points="1,5 4,8 9,2" stroke="white" stroke-width="2" fill="none"/></svg>
+                </div>
+                <div style="flex:1">
+                  <div style="font-size:13.5px;color:#fff;font-weight:300;margin-bottom:3px">26 項過敏原檢測</div>
+                  <div style="font-size:11.5px;color:var(--g400)">EU Annex III 規定之香氛過敏原</div>
+                </div>
+                <div class="fee-display" style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:var(--gold-lt);white-space:nowrap">NT$25,000</div>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:24px;padding:16px 20px;border:1px solid rgba(181,144,58,.2);background:rgba(181,144,58,.05);display:flex;justify-content:space-between;align-items:center">
+            <div style="font-size:12px;color:var(--g400)">追加測試小計</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;color:#fff" id="s4-total">NT$0</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT: sticky total panel -->
+      <div style="position:sticky;top:90px">
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(181,144,58,.18);padding:36px 30px">
+          <div style="font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:24px">費用試算結果</div>
+
+          <div style="display:flex;flex-direction:column;gap:0">
+            <div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid rgba(181,144,58,.08)">
+              <div style="font-size:12.5px;color:var(--g400)">第一階段</div>
+              <div style="font-family:'Cormorant Garamond',serif;font-size:18px;color:#fff">NT$12,000</div>
+            </div>
+            <div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid rgba(181,144,58,.08)">
+              <div>
+                <div style="font-size:12.5px;color:var(--g400)">第二階段</div>
+                <div id="s2-savings-label" style="font-size:10.5px;color:#5aaa7a;display:none"></div>
+              </div>
+              <div style="font-family:'Cormorant Garamond',serif;font-size:18px;color:#fff" id="panel-s2">NT$90,000</div>
+            </div>
+            <div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid rgba(181,144,58,.08)">
+              <div>
+                <div style="font-size:12.5px;color:var(--g400)">第三階段</div>
+                <div id="s3-savings-label" style="font-size:10.5px;color:#5aaa7a;display:none"></div>
+              </div>
+              <div style="font-family:'Cormorant Garamond',serif;font-size:18px;color:#fff" id="panel-s3">NT$80,000</div>
+            </div>
+            <div style="display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid rgba(181,144,58,.08)">
+              <div style="font-size:12.5px;color:var(--g400)">追加測試</div>
+              <div style="font-family:'Cormorant Garamond',serif;font-size:18px;color:#fff" id="panel-s4">NT$0</div>
+            </div>
+          </div>
+
+          <div id="total-savings-row" style="display:none;margin-top:16px;padding:10px 14px;background:rgba(90,170,122,.1);border:1px solid rgba(90,170,122,.2)">
+            <div style="font-size:10.5px;letter-spacing:1.5px;color:#5aaa7a;margin-bottom:2px">自備資料節省</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:#5aaa7a" id="total-savings-num">−NT$0</div>
+          </div>
+
+          <div style="margin-top:20px;padding-top:20px;border-top:1px solid rgba(181,144,58,.15)">
+            <div style="font-size:10px;letter-spacing:2px;color:var(--g400);margin-bottom:6px">估算總費用</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:46px;font-weight:300;color:#fff;line-height:1">NT$<span id="grand-total">182,000</span></div>
+            <div style="font-size:11px;color:var(--g600);margin-top:6px">未含追加測試・實際依評估結果</div>
+          </div>
+
+          <a href="#contact" style="display:block;margin-top:24px;text-align:center;background:var(--gold);color:var(--navy);padding:13px;font-size:11px;letter-spacing:3px;text-transform:uppercase;font-weight:500;transition:all .3s" onmouseover="this.style.background='var(--gold-lt)'" onmouseout="this.style.background='var(--gold)'">申請 PIF 服務諮詢 →</a>
+          <div style="margin-top:12px;font-size:10.5px;color:var(--g600);text-align:center;line-height:1.6">以上為估算參考，正式報價依產品複雜度而定</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ENROLLMENT -->
+<section style="background:var(--g50);padding:96px 0" id="enroll">
+  <div class="container">
+    <div class="sec-label">課程報名</div>
+    <h2 class="sec-title">報名流程<br>三步驟完成</h2>
+    <p class="sec-desc" style="margin-bottom:60px">填寫報名表單後，我們將於 2 個工作日內確認名額並寄送繳費資訊，完成繳費即完成報名。</p>
+
+    <!-- step indicators -->
+    <div style="display:flex;align-items:center;justify-content:center;gap:0;margin-bottom:56px">
+      <div class="enroll-step-ind active-step" id="step-ind-1" style="display:flex;align-items:center;gap:12px;cursor:pointer" onclick="goStep(1)">
+        <div id="step-circle-1" style="width:40px;height:40px;border-radius:50%;border:2px solid var(--gold);background:var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--navy);font-weight:400;flex-shrink:0;transition:all .3s">1</div>
+        <div style="font-size:12px;letter-spacing:1.5px;color:var(--navy);font-weight:400;white-space:nowrap">選擇課程</div>
+      </div>
+      <div style="width:80px;height:1px;background:rgba(181,144,58,.3);margin:0 8px"></div>
+      <div class="enroll-step-ind" id="step-ind-2" style="display:flex;align-items:center;gap:12px;cursor:pointer" onclick="goStep(2)">
+        <div id="step-circle-2" style="width:40px;height:40px;border-radius:50%;border:2px solid rgba(181,144,58,.3);background:transparent;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--g400);font-weight:400;flex-shrink:0;transition:all .3s">2</div>
+        <div style="font-size:12px;letter-spacing:1.5px;color:var(--g400);font-weight:300;white-space:nowrap">填寫資料</div>
+      </div>
+      <div style="width:80px;height:1px;background:rgba(181,144,58,.3);margin:0 8px"></div>
+      <div class="enroll-step-ind" id="step-ind-3" style="display:flex;align-items:center;gap:12px;cursor:pointer" onclick="goStep(3)">
+        <div id="step-circle-3" style="width:40px;height:40px;border-radius:50%;border:2px solid rgba(181,144,58,.3);background:transparent;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--g400);font-weight:400;flex-shrink:0;transition:all .3s">3</div>
+        <div style="font-size:12px;letter-spacing:1.5px;color:var(--g400);font-weight:300;white-space:nowrap">確認送出</div>
+      </div>
+    </div>
+
+    <!-- STEP 1: course selection -->
+    <div id="enroll-step-1" style="max-width:800px;margin:0 auto">
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:32px">
+        <div class="course-sel" id="sel-ifa" onclick="selectCourse('ifa')" style="padding:24px 28px;border:2px solid rgba(181,144,58,.2);background:#fff;cursor:pointer;transition:all .3s;position:relative">
+          <div style="font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:8px">IFA 認證</div>
+          <div style="font-family:'Noto Serif TC',serif;font-size:16px;letter-spacing:2px;color:var(--navy);margin-bottom:6px">IFA 芳療師認證課程</div>
+          <div style="font-size:12px;color:var(--g600)">NT$68,000・200小時・可分期</div>
+          <div class="sel-check" style="position:absolute;top:16px;right:16px;width:20px;height:20px;border:1.5px solid rgba(181,144,58,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .3s">
+            <svg width="10" height="10" viewBox="0 0 10 10" style="display:none"><polyline points="1,5 4,8 9,2" stroke="white" stroke-width="1.8" fill="none"/></svg>
+          </div>
+        </div>
+        <div class="course-sel" id="sel-med" onclick="selectCourse('med')" style="padding:24px 28px;border:2px solid rgba(181,144,58,.2);background:#fff;cursor:pointer;transition:all .3s;position:relative">
+          <div style="font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:8px">創業培訓</div>
+          <div style="font-family:'Noto Serif TC',serif;font-size:16px;letter-spacing:2px;color:var(--navy);margin-bottom:6px">醫學美容創業培訓計畫</div>
+          <div style="font-size:12px;color:var(--g600)">NT$45,000・3個月・名額6人</div>
+          <div class="sel-check" style="position:absolute;top:16px;right:16px;width:20px;height:20px;border:1.5px solid rgba(181,144,58,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .3s">
+            <svg width="10" height="10" viewBox="0 0 10 10" style="display:none"><polyline points="1,5 4,8 9,2" stroke="white" stroke-width="1.8" fill="none"/></svg>
+          </div>
+        </div>
+        <div class="course-sel" id="sel-reg" onclick="selectCourse('reg')" style="padding:24px 28px;border:2px solid rgba(181,144,58,.2);background:#fff;cursor:pointer;transition:all .3s;position:relative">
+          <div style="font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:8px">法規實務</div>
+          <div style="font-family:'Noto Serif TC',serif;font-size:16px;letter-spacing:2px;color:var(--navy);margin-bottom:6px">化妝品法規實務課程</div>
+          <div style="font-size:12px;color:var(--g600)">NT$18,000・32小時・小班制</div>
+          <div class="sel-check" style="position:absolute;top:16px;right:16px;width:20px;height:20px;border:1.5px solid rgba(181,144,58,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .3s">
+            <svg width="10" height="10" viewBox="0 0 10 10" style="display:none"><polyline points="1,5 4,8 9,2" stroke="white" stroke-width="1.8" fill="none"/></svg>
+          </div>
+        </div>
+        <div class="course-sel" id="sel-perf" onclick="selectCourse('perf')" style="padding:24px 28px;border:2px solid rgba(181,144,58,.2);background:#fff;cursor:pointer;transition:all .3s;position:relative">
+          <div style="font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:8px">調香培訓</div>
+          <div style="font-family:'Noto Serif TC',serif;font-size:16px;letter-spacing:2px;color:var(--navy);margin-bottom:6px">天然香水調香師培訓</div>
+          <div style="font-size:12px;color:var(--g600)">NT$28,000・48小時・實體工作坊</div>
+          <div class="sel-check" style="position:absolute;top:16px;right:16px;width:20px;height:20px;border:1.5px solid rgba(181,144,58,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .3s">
+            <svg width="10" height="10" viewBox="0 0 10 10" style="display:none"><polyline points="1,5 4,8 9,2" stroke="white" stroke-width="1.8" fill="none"/></svg>
+          </div>
+        </div>
+      </div>
+      <div id="step1-err" style="display:none;color:#e05555;font-size:12.5px;margin-bottom:16px;letter-spacing:1px">請先選擇至少一個課程</div>
+      <div style="display:flex;justify-content:flex-end">
+        <button onclick="nextStep(1)" style="background:var(--gold);color:var(--navy);border:none;padding:13px 36px;font-size:11.5px;letter-spacing:2.5px;text-transform:uppercase;font-weight:500;cursor:pointer;transition:all .3s;font-family:'DM Sans',sans-serif" onmouseover="this.style.background='var(--gold-lt)'" onmouseout="this.style.background='var(--gold)'">下一步：填寫資料 →</button>
+      </div>
+    </div>
+
+    <!-- STEP 2: personal info -->
+    <div id="enroll-step-2" style="display:none;max-width:800px;margin:0 auto">
+      <div style="background:#fff;border:1px solid var(--g50);padding:44px 40px">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px">
+          <div>
+            <label style="font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:var(--g600);margin-bottom:8px;display:block">姓名 *</label>
+            <input id="f-name" type="text" placeholder="您的姓名" style="width:100%;border:1px solid var(--g200);padding:11px 14px;font-size:13px;font-family:'DM Sans',sans-serif;outline:none;transition:border-color .25s;color:var(--navy)" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--g200)'">
+          </div>
+          <div>
+            <label style="font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:var(--g600);margin-bottom:8px;display:block">聯絡電話 *</label>
+            <input id="f-phone" type="text" placeholder="09XX-XXX-XXX" style="width:100%;border:1px solid var(--g200);padding:11px 14px;font-size:13px;font-family:'DM Sans',sans-serif;outline:none;transition:border-color .25s;color:var(--navy)" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--g200)'">
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px">
+          <div>
+            <label style="font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:var(--g600);margin-bottom:8px;display:block">電子郵件 *</label>
+            <input id="f-email" type="email" placeholder="email@example.com" style="width:100%;border:1px solid var(--g200);padding:11px 14px;font-size:13px;font-family:'DM Sans',sans-serif;outline:none;transition:border-color .25s;color:var(--navy)" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--g200)'">
+          </div>
+          <div>
+            <label style="font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:var(--g600);margin-bottom:8px;display:block">現職 / 背景</label>
+            <input id="f-job" type="text" placeholder="例：護理師、美容師、品牌主" style="width:100%;border:1px solid var(--g200);padding:11px 14px;font-size:13px;font-family:'DM Sans',sans-serif;outline:none;transition:border-color .25s;color:var(--navy)" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--g200)'">
+          </div>
+        </div>
+        <div style="margin-bottom:20px">
+          <label style="font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:var(--g600);margin-bottom:8px;display:block">付款方式偏好</label>
+          <div style="display:flex;gap:16px;flex-wrap:wrap">
+            <label style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--navy);cursor:pointer"><input type="radio" name="payment" value="full" style="accent-color:var(--gold)"> 一次付清</label>
+            <label style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--navy);cursor:pointer"><input type="radio" name="payment" value="split"> 分期付款（3期）</label>
+            <label style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--navy);cursor:pointer"><input type="radio" name="payment" value="ask"> 洽詢方案</label>
+          </div>
+        </div>
+        <div style="margin-bottom:8px">
+          <label style="font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:var(--g600);margin-bottom:8px;display:block">報名動機 / 補充說明</label>
+          <textarea id="f-note" placeholder="簡述您的背景或期望收穫（選填）" style="width:100%;border:1px solid var(--g200);padding:11px 14px;font-size:13px;font-family:'DM Sans',sans-serif;outline:none;transition:border-color .25s;color:var(--navy);resize:vertical;min-height:90px" onfocus="this.style.borderColor='var(--gold)'" onblur="this.style.borderColor='var(--g200)'"></textarea>
+        </div>
+      </div>
+      <div id="step2-err" style="display:none;color:#e05555;font-size:12.5px;margin-top:12px;letter-spacing:1px">請填寫必填欄位（姓名、電話、Email）</div>
+      <div style="display:flex;justify-content:space-between;margin-top:24px">
+        <button onclick="prevStep(2)" style="background:transparent;color:var(--g600);border:1px solid var(--g200);padding:13px 28px;font-size:11.5px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;font-family:'DM Sans',sans-serif" onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--navy)'" onmouseout="this.style.borderColor='var(--g200)';this.style.color='var(--g600)'">← 上一步</button>
+        <button onclick="nextStep(2)" style="background:var(--gold);color:var(--navy);border:none;padding:13px 36px;font-size:11.5px;letter-spacing:2.5px;text-transform:uppercase;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif" onmouseover="this.style.background='var(--gold-lt)'" onmouseout="this.style.background='var(--gold)'">下一步：確認送出 →</button>
+      </div>
+    </div>
+
+    <!-- STEP 3: confirm -->
+    <div id="enroll-step-3" style="display:none;max-width:800px;margin:0 auto">
+      <div style="background:#fff;border:1px solid var(--g50);padding:44px 40px">
+        <div style="font-family:'Noto Serif TC',serif;font-size:16px;letter-spacing:2px;color:var(--navy);margin-bottom:28px;padding-bottom:16px;border-bottom:1px solid var(--g50)">報名確認資料</div>
+        <div id="confirm-summary" style="display:flex;flex-direction:column;gap:14px;margin-bottom:28px"></div>
+        <div style="background:var(--g50);padding:18px 20px;border-left:3px solid var(--gold)">
+          <div style="font-size:12px;font-weight:300;color:var(--g600);line-height:1.8">送出後，我們將於 <strong style="color:var(--navy)">2 個工作日內</strong> 以 Email 確認名額，並提供繳費帳號。完成繳費即完成報名，名額保留至繳費截止日。</div>
+        </div>
+      </div>
+      <div id="step3-success" style="display:none;text-align:center;padding:48px;background:#fff;border:1px solid var(--g50);margin-top:2px">
+        <div style="font-size:40px;margin-bottom:16px">✓</div>
+        <div style="font-family:'Noto Serif TC',serif;font-size:20px;letter-spacing:2px;color:var(--navy);margin-bottom:10px">報名成功</div>
+        <div style="font-size:13.5px;color:var(--g600);line-height:1.8">感謝您的報名，我們將盡快與您聯繫確認細節。</div>
+      </div>
+      <div style="display:flex;justify-content:space-between;margin-top:24px" id="step3-btns">
+        <button onclick="prevStep(3)" style="background:transparent;color:var(--g600);border:1px solid var(--g200);padding:13px 28px;font-size:11.5px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;font-family:'DM Sans',sans-serif" onmouseover="this.style.borderColor='var(--gold)';this.style.color='var(--navy)'" onmouseout="this.style.borderColor='var(--g200)';this.style.color='var(--g600)'">← 修改資料</button>
+        <button onclick="submitEnroll()" style="background:var(--gold);color:var(--navy);border:none;padding:13px 36px;font-size:11.5px;letter-spacing:2.5px;text-transform:uppercase;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif" onmouseover="this.style.background='var(--gold-lt)'" onmouseout="this.style.background='var(--gold)'">確認送出報名 ✓</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="contact-left">
+        <div class="sec-label">聯絡學會</div>
+        <h2 class="sec-title">開始您的<br>法規合規之路</h2>
+        <p class="sec-desc" style="margin-bottom:32px">無論是 EU PIF 製作、TFDA 法規顧問、芳療課程報名，或醫美創業培訓諮詢，填寫右側表單，我們將於 2 個工作日內與您聯繫。</p>
+        <div style="padding:24px 28px;border:1px solid rgba(181,144,58,.15);background:rgba(181,144,58,.04)">
+          <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px">表單送出後</div>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <div style="display:flex;gap:12px;align-items:flex-start">
+              <div style="width:22px;height:22px;border:1px solid rgba(181,144,58,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Cormorant Garamond',serif;font-size:13px;color:var(--gold)">1</div>
+              <div style="font-size:13px;color:var(--g200);font-weight:300;line-height:1.7">我們將於 <strong style="color:#fff;font-weight:400">2 個工作日內</strong> 以 Email 回覆確認</div>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start">
+              <div style="width:22px;height:22px;border:1px solid rgba(181,144,58,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Cormorant Garamond',serif;font-size:13px;color:var(--gold)">2</div>
+              <div style="font-size:13px;color:var(--g200);font-weight:300;line-height:1.7">安排初步諮詢，了解您的產品與需求</div>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start">
+              <div style="width:22px;height:22px;border:1px solid rgba(181,144,58,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Cormorant Garamond',serif;font-size:13px;color:var(--gold)">3</div>
+              <div style="font-size:13px;color:var(--g200);font-weight:300;line-height:1.7">提供正式報價或課程錄取通知</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <div class="form-title">服務諮詢 / 課程報名</div>
+
+        <!-- Formspree 設定：至 formspree.io 免費註冊，建立表單後將 YOUR_FORM_ID 替換為實際 ID，收件信箱已設定為 s1010304@gmail.com -->
+        <form id="contact-form" action="https://formspree.io/f/mjgzkepy" method="POST" onsubmit="handleContactSubmit(event)">
+          <input type="hidden" name="_subject" value="【CSAA 學會諮詢】新表單來信">
+          <input type="hidden" name="_language" value="zh">
+          <input type="hidden" name="_to" value="s1010304@gmail.com">
+
+          <div class="form-row-2">
+            <div class="form-row">
+              <label class="form-label">姓名 *</label>
+              <input class="form-input" type="text" name="姓名" placeholder="您的姓名" required>
+            </div>
+            <div class="form-row">
+              <label class="form-label">聯絡電話 *</label>
+              <input class="form-input" type="text" name="聯絡電話" placeholder="09XX-XXX-XXX" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <label class="form-label">電子郵件 *</label>
+            <input class="form-input" type="email" name="email" placeholder="email@example.com" required>
+            <input type="hidden" name="_replyto" id="replyto-hidden">
+          </div>
+          <div class="form-row">
+            <label class="form-label">服務項目</label>
+            <select class="form-select" name="服務項目">
+              <option value="" disabled selected>請選擇服務項目</option>
+              <option>PIF 製作・EU 產品資訊文件</option>
+              <option>TFDA 法規顧問服務</option>
+              <option>IFA 國際芳療師認證課程</option>
+              <option>醫學美容創業培訓計畫</option>
+              <option>化妝品法規實務課程</option>
+              <option>天然香水調香師培訓</option>
+              <option>企業客製化培訓方案</option>
+              <option>其他諮詢</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label class="form-label">公司 / 品牌名稱</label>
+            <input class="form-input" type="text" name="公司品牌" placeholder="（選填）">
+          </div>
+          <div class="form-row">
+            <label class="form-label">說明需求</label>
+            <textarea class="form-textarea" name="需求說明" placeholder="請簡述您的產品類型、市場目標或課程需求…"></textarea>
+          </div>
+
+          <!-- success message (hidden by default) -->
+          <div id="contact-success" style="display:none;padding:18px 20px;background:rgba(90,170,122,.1);border:1px solid rgba(90,170,122,.25);margin-bottom:16px">
+            <div style="font-size:13px;color:#5aaa7a;font-weight:400">✓ 已成功送出</div>
+            <div style="font-size:12px;color:var(--g400);margin-top:4px">我們將於 2 個工作日內以 Email 與您聯繫。</div>
+          </div>
+          <div id="contact-error" style="display:none;padding:18px 20px;background:rgba(220,80,80,.08);border:1px solid rgba(220,80,80,.2);margin-bottom:16px">
+            <div style="font-size:12.5px;color:#e07070">送出失敗，請稍後再試或直接 Email 聯繫我們。</div>
+          </div>
+
+          <button type="submit" class="form-submit" id="contact-btn">送出諮詢</button>
+
+          <a href="https://line.me/R/ti/p/@jostaiwan" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:9px;margin-top:10px;padding:13px;background:transparent;border:1px solid rgba(6,199,85,.35);color:#06C755;font-size:11.5px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:all .3s" onmouseover="this.style.background='rgba(6,199,85,.1)';this.style.borderColor='#06C755'" onmouseout="this.style.background='transparent';this.style.borderColor='rgba(6,199,85,.35)'">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#06C755"><path d="M12 2C6.48 2 2 6.03 2 11c0 3.27 1.82 6.14 4.58 7.88-.18.64-.66 2.33-.76 2.7-.12.45.17.45.36.33.15-.1 2.33-1.54 3.28-2.17.81.11 1.65.17 2.54.17 5.52 0 10-4.03 10-9S17.52 2 12 2z"/></svg>
+            或直接 LINE 我們 @jostaiwan
+          </a>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-seal"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+      <div>
+        <div class="footer-zh">化妝品安全與香氛應用學會</div>
+        <div style="font-size:10px;letter-spacing:2.5px;color:var(--g600);font-family:'Cormorant Garamond',serif;margin-top:2px">CSAA · Cosmetic Safety &amp; Aromatherapy Association</div>
+      </div>
+    </div>
+    <div class="footer-links">
+      <a href="#services">服務項目</a>
+      <a href="#regulation">法規服務</a>
+      <a href="#courses">認證課程</a>
+      <a href="#about">關於學會</a>
+      <a href="#contact">聯絡我們</a>
+    </div>
+    <div class="footer-copy">© 2025 CSAA. All Rights Reserved.</div>
+  </div>
+</footer>
+
+<script>
+function switchTab(tab) {
+  document.querySelectorAll('.law-tab').forEach((t,i) => {
+    t.classList.toggle('active', (tab==='eu'&&i===0)||(tab==='tfda'&&i===1));
+  });
+  document.getElementById('panel-eu').classList.toggle('active', tab==='eu');
+  document.getElementById('panel-tfda').classList.toggle('active', tab==='tfda');
+}
+
+// ── CONTACT FORM (Formspree) ──
+async function handleContactSubmit(e) {
+  e.preventDefault();
+  const btn  = document.getElementById('contact-btn');
+  const form = document.getElementById('contact-form');
+  const ok   = document.getElementById('contact-success');
+  const err  = document.getElementById('contact-error');
+
+  // sync _replyto with email value
+  const emailVal = form.querySelector('input[name="email"]').value;
+  document.getElementById('replyto-hidden').value = emailVal;
+
+  btn.textContent = '送出中…';
+  btn.disabled = true;
+  ok.style.display = 'none';
+  err.style.display = 'none';
+
+  try {
+    const res = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+    if(res.ok) {
+      ok.style.display = 'block';
+      form.reset();
+      btn.textContent = '✓ 已送出';
+    } else {
+      throw new Error();
+    }
+  } catch {
+    err.style.display = 'block';
+    btn.textContent = '送出諮詢';
+    btn.disabled = false;
+  }
+}
+
+// ── PIF STAGE CALCULATOR ──
+const BASE = { s1:12000, s2:90000, s3:80000 };
+const waived = {};
+const added  = {};
+
+function showStage(n) {
+  [1,2,3,4].forEach(i => {
+    document.getElementById('stage-'+i).style.display = i===n ? 'block' : 'none';
+    const tab = document.getElementById('stab-'+i);
+    tab.style.color = i===n ? 'var(--gold-lt)' : 'var(--g400)';
+    tab.style.borderBottomColor = i===n ? 'var(--gold)' : 'transparent';
+  });
+}
+
+function toggleWaive(row) {
+  const item = row.closest('.pif-item');
+  const key  = item.dataset.key;
+  const fee  = parseInt(item.dataset.fee) || 0;
+  const box  = row.querySelector('.waive-box');
+  const svg  = box.querySelector('svg');
+  const fdsp = row.querySelector('.fee-display');
+
+  if(waived[key]) {
+    delete waived[key];
+    box.style.background = 'transparent';
+    box.style.borderColor = 'rgba(181,144,58,.4)';
+    svg.style.display = 'none';
+    row.style.background = 'rgba(255,255,255,.03)';
+    if(fdsp && fee > 0) { fdsp.style.textDecoration='none'; fdsp.style.color='var(--gold-lt)'; }
+  } else {
+    waived[key] = fee;
+    box.style.background = '#5aaa7a';
+    box.style.borderColor = '#5aaa7a';
+    svg.style.display = 'block';
+    row.style.background = 'rgba(90,170,122,.06)';
+    if(fdsp && fee > 0) { fdsp.style.textDecoration='line-through'; fdsp.style.color='var(--g600)'; }
+  }
+  recalc();
+}
+
+function toggleAdd(row) {
+  const item = row.closest('.pif-item');
+  const key  = item.dataset.key;
+  const fee  = parseInt(item.dataset.fee) || 0;
+  const box  = row.querySelector('.add-box');
+  const svg  = box.querySelector('svg');
+
+  if(added[key]) {
+    delete added[key];
+    box.style.background = 'transparent';
+    box.style.borderColor = 'rgba(181,144,58,.4)';
+    svg.style.display = 'none';
+    row.style.background = 'rgba(255,255,255,.03)';
+  } else {
+    added[key] = fee;
+    box.style.background = 'var(--gold)';
+    box.style.borderColor = 'var(--gold)';
+    svg.style.display = 'block';
+    row.style.background = 'rgba(181,144,58,.06)';
+  }
+  recalc();
+}
+
+function recalc() {
+  const s2waived = ['s2_stability','s2_micro','s2_preserv','s2_safety','s2_pkg']
+    .reduce((s,k) => s + (waived[k]||0), 0);
+  const s3waived = ['s3_tox'].reduce((s,k) => s + (waived[k]||0), 0);
+  const s4total  = Object.values(added).reduce((s,v) => s+v, 0);
+
+  const s2final = Math.max(15000, BASE.s2 - s2waived); // audit fee always remains
+  const s3final = Math.max(30000, BASE.s3 - s3waived); // signing always remains
+  const grand   = BASE.s1 + s2final + s3final + s4total;
+  const totalSaved = s2waived + s3waived;
+
+  // update stage 2
+  document.getElementById('s2-total').textContent = 'NT$' + s2final.toLocaleString();
+  document.getElementById('panel-s2').textContent  = 'NT$' + s2final.toLocaleString();
+  if(s2waived > 0) {
+    document.getElementById('s2-waived').textContent = '已抵免 NT$' + s2waived.toLocaleString();
+    document.getElementById('s2-waived').style.display = 'block';
+    document.getElementById('s2-savings-label').textContent = '節省 NT$' + s2waived.toLocaleString();
+    document.getElementById('s2-savings-label').style.display = 'block';
+  } else {
+    document.getElementById('s2-waived').style.display = 'none';
+    document.getElementById('s2-savings-label').style.display = 'none';
+  }
+
+  // update stage 3
+  document.getElementById('s3-total').textContent = 'NT$' + s3final.toLocaleString();
+  document.getElementById('panel-s3').textContent  = 'NT$' + s3final.toLocaleString();
+  if(s3waived > 0) {
+    document.getElementById('s3-waived').textContent = '已抵免 NT$' + s3waived.toLocaleString();
+    document.getElementById('s3-waived').style.display = 'block';
+    document.getElementById('s3-savings-label').textContent = '節省 NT$' + s3waived.toLocaleString();
+    document.getElementById('s3-savings-label').style.display = 'block';
+  } else {
+    document.getElementById('s3-waived').style.display = 'none';
+    document.getElementById('s3-savings-label').style.display = 'none';
+  }
+
+  // update stage 4
+  document.getElementById('s4-total').textContent = s4total > 0 ? 'NT$'+s4total.toLocaleString() : 'NT$0';
+  document.getElementById('panel-s4').textContent  = s4total > 0 ? 'NT$'+s4total.toLocaleString() : 'NT$0';
+
+  // total savings
+  if(totalSaved > 0) {
+    document.getElementById('total-savings-row').style.display = 'block';
+    document.getElementById('total-savings-num').textContent = '−NT$' + totalSaved.toLocaleString();
+  } else {
+    document.getElementById('total-savings-row').style.display = 'none';
+  }
+
+  document.getElementById('grand-total').textContent = grand.toLocaleString();
+}
+
+// ── QUOTE CALCULATOR ──
+const prices = { pif:28000, tfda:8800, ifa:68000, med:45000 };
+const qtys   = { pif:0, tfda:0, ifa:0, med:0 };
+const maxQty = { pif:20, tfda:24, ifa:10, med:6 };
+
+function changeQty(key, delta) {
+  qtys[key] = Math.max(0, Math.min(maxQty[key], qtys[key] + delta));
+  document.getElementById('qty-'+key).textContent = qtys[key];
+  const sub = qtys[key] > 0
+    ? 'NT$' + (prices[key]*qtys[key]).toLocaleString()
+    : '';
+  document.getElementById(key+'-sub').textContent = sub;
+  updateTotal();
+}
+
+function updateTotal() {
+  const total = Object.keys(qtys).reduce((s,k) => s + qtys[k]*prices[k], 0);
+  document.getElementById('calc-num').textContent = total.toLocaleString();
+  const items = [];
+  if(qtys.pif  > 0) items.push('PIF '+qtys.pif+'件');
+  if(qtys.tfda > 0) items.push('TFDA顧問'+qtys.tfda+'個月');
+  if(qtys.ifa  > 0) items.push('IFA課程'+qtys.ifa+'人');
+  if(qtys.med  > 0) items.push('醫美培訓'+qtys.med+'人');
+  const disc = total >= 100000 ? '（組合方案可享優惠，請洽詢）' : '';
+  document.getElementById('calc-note').textContent =
+    items.length ? items.join(' + ') + ' ' + disc : '請在右側選擇服務項目';
+}
+
+// ── ENROLLMENT STEPS ──
+let selectedCourses = new Set();
+let currentStep = 1;
+
+function selectCourse(id) {
+  const el = document.getElementById('sel-'+id);
+  const chk = el.querySelector('.sel-check');
+  const svg = chk.querySelector('svg');
+  if(selectedCourses.has(id)) {
+    selectedCourses.delete(id);
+    el.style.borderColor = 'rgba(181,144,58,.2)';
+    el.style.background = '#fff';
+    chk.style.background = 'transparent';
+    chk.style.borderColor = 'rgba(181,144,58,.3)';
+    svg.style.display = 'none';
+  } else {
+    selectedCourses.add(id);
+    el.style.borderColor = 'var(--gold)';
+    el.style.background = 'rgba(181,144,58,.04)';
+    chk.style.background = 'var(--gold)';
+    chk.style.borderColor = 'var(--gold)';
+    svg.style.display = 'block';
+  }
+  document.getElementById('step1-err').style.display = 'none';
+}
+
+function goStep(n) {
+  [1,2,3].forEach(i => {
+    document.getElementById('enroll-step-'+i).style.display = i===n ? 'block' : 'none';
+    const circle = document.getElementById('step-circle-'+i);
+    if(i < n) {
+      circle.style.background = 'var(--gold)';
+      circle.style.borderColor = 'var(--gold)';
+      circle.style.color = 'var(--navy)';
+      circle.textContent = '✓';
+    } else if(i === n) {
+      circle.style.background = 'var(--gold)';
+      circle.style.borderColor = 'var(--gold)';
+      circle.style.color = 'var(--navy)';
+      circle.textContent = i;
+    } else {
+      circle.style.background = 'transparent';
+      circle.style.borderColor = 'rgba(181,144,58,.3)';
+      circle.style.color = 'var(--g400)';
+      circle.textContent = i;
+    }
+  });
+  currentStep = n;
+  document.getElementById('enroll').scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+const courseNames = {
+  ifa:  'IFA 芳療師認證課程・NT$68,000',
+  med:  '醫學美容創業培訓計畫・NT$45,000',
+  reg:  '化妝品法規實務課程・NT$18,000',
+  perf: '天然香水調香師培訓・NT$28,000'
+};
+
+function nextStep(from) {
+  if(from === 1) {
+    if(selectedCourses.size === 0) {
+      document.getElementById('step1-err').style.display = 'block'; return;
+    }
+    goStep(2);
+  } else if(from === 2) {
+    const name  = document.getElementById('f-name').value.trim();
+    const phone = document.getElementById('f-phone').value.trim();
+    const email = document.getElementById('f-email').value.trim();
+    if(!name || !phone || !email) {
+      document.getElementById('step2-err').style.display = 'block'; return;
+    }
+    document.getElementById('step2-err').style.display = 'none';
+    // build summary
+    const pay = document.querySelector('input[name="payment"]:checked');
+    const payLabel = pay ? ({full:'一次付清',split:'分期付款（3期）',ask:'洽詢方案'}[pay.value]) : '未選擇';
+    const summary = [
+      {l:'報名課程', v: [...selectedCourses].map(c=>courseNames[c]).join('<br>')},
+      {l:'姓名',     v: name},
+      {l:'聯絡電話', v: phone},
+      {l:'電子郵件', v: email},
+      {l:'現職背景', v: document.getElementById('f-job').value.trim() || '—'},
+      {l:'付款方式', v: payLabel},
+    ];
+    const note = document.getElementById('f-note').value.trim();
+    if(note) summary.push({l:'補充說明', v: note});
+
+    const box = document.getElementById('confirm-summary');
+    box.innerHTML = summary.map(r=>`
+      <div style="display:grid;grid-template-columns:120px 1fr;gap:16px;padding:10px 0;border-bottom:1px solid var(--g50)">
+        <div style="font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--g400)">${r.l}</div>
+        <div style="font-size:13.5px;color:var(--navy);font-weight:300;line-height:1.6">${r.v}</div>
+      </div>`).join('');
+    goStep(3);
+  }
+}
+
+function prevStep(from) { goStep(from - 1); }
+
+function submitEnroll() {
+  document.getElementById('step3-success').style.display = 'block';
+  document.getElementById('step3-btns').style.display = 'none';
+  document.querySelector('#enroll-step-3 > div:first-child').style.display = 'none';
+  const circle3 = document.getElementById('step-circle-3');
+  circle3.style.background = 'var(--gold)';
+  circle3.style.borderColor = 'var(--gold)';
+  circle3.style.color = 'var(--navy)';
+  circle3.textContent = '✓';
+}
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting){
+      e.target.style.opacity='1';
+      e.target.style.transform='translateY(0)';
+    }
+  });
+},{threshold:0.08});
+
+document.querySelectorAll('.svc-card,.course-card,.value-item,.law-step,.comp-group,.info-item').forEach(el=>{
+  el.style.opacity='0';
+  el.style.transform='translateY(22px)';
+  el.style.transition='opacity 0.6s ease, transform 0.6s ease';
+  observer.observe(el);
+});
+</script>
+<!-- Floating LINE Button -->
+<a href="https://line.me/R/ti/p/@jostaiwan" target="_blank" rel="noopener"
+   style="position:fixed;bottom:28px;right:28px;z-index:500;
+          width:56px;height:56px;border-radius:50%;
+          background:#06C755;
+          display:flex;align-items:center;justify-content:center;
+          box-shadow:0 4px 20px rgba(6,199,85,.45);
+          transition:all .3s;text-decoration:none"
+   onmouseover="this.style.transform='scale(1.1)';this.style.boxShadow='0 6px 28px rgba(6,199,85,.6)'"
+   onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 20px rgba(6,199,85,.45)'"
+   title="LINE 諮詢 @jostaiwan">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
+    <path d="M12 2C6.48 2 2 6.03 2 11c0 3.27 1.82 6.14 4.58 7.88-.18.64-.66 2.33-.76 2.7-.12.45.17.45.36.33.15-.1 2.33-1.54 3.28-2.17.81.11 1.65.17 2.54.17 5.52 0 10-4.03 10-9S17.52 2 12 2z"/>
+  </svg>
+</a>
+
+</body>
+</html>
